@@ -23,7 +23,7 @@ namespace CopyrightHelper.Core
         /// 从配置文件读取配置
         /// </summary>
         /// <returns></returns>
-        public static ToolConfig Load()
+        public static StoreConfig Load()
         {
             if (!File.Exists(Constants.ConfigFilePath))
             {
@@ -32,12 +32,15 @@ namespace CopyrightHelper.Core
             var store = SerializeHelper.FromXmlFile<StoreConfig>(Constants.ConfigFilePath);
             //返回默认
             if (store == null || store.Configs == null || store.Configs.Count == 0)
-                return GetDefaultConfig();
+            {
+                store = GetDefaultConfig();
+            }
 
-            store.Sort();
+            //store.Sort();
 
-            return ConvertToToolConfig(store);
+            return store;
         }
+
 
         /// <summary>
         /// 将配置转行为ToolConfig
@@ -51,6 +54,7 @@ namespace CopyrightHelper.Core
                 CompanyName = store.CompanyName,
                 YourName = store.YourName,
                 Configs = new List<ToolItemConfig>(),
+                IsInsertToTop = store.IsInsertToTop,
             };
 
             foreach (var item in store.Configs)
@@ -86,17 +90,17 @@ namespace CopyrightHelper.Core
         /// 生成默认配置
         /// </summary>
         /// <returns></returns>
-        private static ToolConfig GetDefaultConfig()
+        private static StoreConfig GetDefaultConfig()
         {
-            var cfg = new ToolConfig()
+            var cfg = new StoreConfig()
             {
                 YourName = "Your Name",
                 CompanyName = "Your Company",
             };
-            cfg.Configs = new List<ToolItemConfig>();
-            var it = new ToolItemConfig()
+            cfg.Configs = new List<StoreItemConfig>();
+            var it = new StoreItemConfig()
             {
-                Keys = new string[] { "*" },
+                Key = "*.*",
             };
             it.Content = @"//===================================================
 //  Copyright @  @company @year
@@ -131,6 +135,7 @@ namespace CopyrightHelper.Core
                 YourName = cfg.YourName,
                 SaveTime = DateTime.Now,
                 Configs = new List<StoreItemConfig>(),
+                IsInsertToTop = cfg.IsInsertToTop,
             };
             if (cfg.Configs == null || cfg.Configs.Count == 0)
                 return store;
@@ -140,7 +145,6 @@ namespace CopyrightHelper.Core
                 var it = new StoreItemConfig()
                 {
                     Content = item.Content,
-                    Order = order,
                 };
                 store.Configs.Add(it);
                 var key = string.Empty;

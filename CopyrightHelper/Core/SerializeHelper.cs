@@ -31,10 +31,18 @@ namespace CopyrightHelper.Core
                 throw new ArgumentNullException("obj");
             if (string.IsNullOrEmpty(filePath))
                 throw new ArgumentNullException("filePath");
+
+            var dir = Path.GetDirectoryName(filePath);
+            if (!Directory.Exists(dir))
+                Directory.CreateDirectory(dir);
+
+            if (File.Exists(filePath))
+                File.Delete(filePath);
+
             using (var fs = File.Open(filePath, FileMode.OpenOrCreate, FileAccess.Write))
-            using (var ms = ToXmlStream(obj))
             {
-                ms.CopyTo(fs);
+                var ser = new XmlSerializer(typeof(T), string.Empty);
+                ser.Serialize(fs, obj);
             }
         }
 

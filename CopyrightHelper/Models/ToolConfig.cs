@@ -25,11 +25,32 @@ namespace CopyrightHelper.Models
         /// 公司名称
         /// </summary>
         public string CompanyName { get; set; }
+        /// <summary>
+        /// 是否将结果插入到文件头
+        /// </summary>
+        public bool IsInsertToTop { get; set; }
 
         /// <summary>
         /// 配置列表，已经排序了。
         /// </summary>
         public List<ToolItemConfig> Configs { get; set; }
+
+        /// <summary>
+        /// 通过拓展名，来获取最匹配的插入语句
+        /// </summary>
+        /// <param name="ext"></param>
+        /// <returns></returns>
+        public ToolItemConfig GetItemByExtension(string ext)
+        {
+            if (string.IsNullOrEmpty(ext))
+                return Configs.FirstOrDefault(x => x.IsContainsKey(".*"));
+            foreach (var item in Configs)
+            {
+                if (item.IsContainsKey(ext))
+                    return item;
+            }
+            return Configs.FirstOrDefault(x => x.IsContainsKey(".*"));
+        }
 
         /// <summary>
         /// Clone
@@ -63,6 +84,23 @@ namespace CopyrightHelper.Models
         /// 内容
         /// </summary>
         public string Content { get; set; }
+
+        /// <summary>
+        /// 是否匹配
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public bool IsContainsKey(string key)
+        {
+            foreach (var item in Keys)
+            {
+                if (item == key)
+                    return true;
+                if (item == ".*")
+                    return true;
+            }
+            return false;
+        }
 
         /// <summary>
         /// Clone

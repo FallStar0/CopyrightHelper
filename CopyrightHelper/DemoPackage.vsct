@@ -56,14 +56,14 @@
         <Parent guid="guidDemoPackageCmdSet" id="MyMenuGroup" />
         <!--<Icon guid="guidImages" id="bmpPic1" />-->
         <Strings>
-          <ButtonText>运行 Demo 命令</ButtonText>
+          <ButtonText>运行 CopyrightHelper 命令</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidDemoPackageCmdSet" id="cmdidConfigToolWindowCommand" priority="0x0100" type="Button">
         <Parent guid="guidDemoPackageCmdSet" id="MyMenuGroup" />
         <!--<Icon guid="guidImages2" id="bmpPic1" />-->
         <Strings>
-          <ButtonText>配置Demo</ButtonText>
+          <ButtonText>配置 CopyrightHelper</ButtonText>
         </Strings>
       </Button>
     </Buttons>

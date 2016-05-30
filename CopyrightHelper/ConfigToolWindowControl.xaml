@@ -9,7 +9,7 @@
              d:DesignHeight="400" d:DesignWidth="600"
              Name="MyToolWindow">
     <UserControl.Resources>
-        <RoutedCommand x:Key="Cmd" CanExecuteChanged="Cmd_CanExecuteChanged"  />
+        <RoutedCommand x:Key="Cmd" />
     </UserControl.Resources>
     <UserControl.CommandBindings>
         <CommandBinding  CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_Executed" Command="{StaticResource Cmd}" />
@@ -18,19 +18,34 @@
         <TabControl >
             <TabItem Header="配置">
                 <Grid>
-                    <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="261" >
+                    <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="348" >
                         <TextBox x:Name="txtInput" Margin="10,10,10,10" Width="100" BorderBrush="Black" Text="*.*" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"  />
-                        <Button Content="增加" Width="60" Margin="0,5,0,5" Command="{DynamicResource Cmd}" CommandParameter="Add"/>
-                        <Button Content="删除" Width="60" Margin="10,5,0,5" Command="{DynamicResource Cmd}" CommandParameter="Del"/>
+                        <Button Content="增加" Width="50" Margin="0,8,0,8" Command="{DynamicResource Cmd}" CommandParameter="Add"/>
+                        <Button Content="删除" Width="50" Margin="8,8,0,8" Command="{DynamicResource Cmd}" CommandParameter="Del"/>
+                        <Button Content="向上" Width="45" Margin="8,8,8,8" Command="{DynamicResource Cmd}" CommandParameter="MoveUp"/>
+                        <Button Content="向下" Width="45" Margin="0,8,0,8" Command="{DynamicResource Cmd}" CommandParameter="MoveDown"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" Margin="283,0,0,0" HorizontalAlignment="Left" Width="261" >
+                    <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" Margin="380,0,0,0" HorizontalAlignment="Left" Width="164" >
                         <Button Content="保存" Width="60" Margin="0,5,0,5" Command="{DynamicResource Cmd}" CommandParameter="Save"/>
                         <Button Content="清空" Width="60" Margin="10,5,0,5" Command="{DynamicResource Cmd}" CommandParameter="Clear"/>
                     </StackPanel>
+
                     <ListBox x:Name="lbType" Margin="0,55,0,10"  HorizontalAlignment="Left" Width="150" BorderBrush="#FF7D899E" />
-                    <TextBox x:Name="txtContent" Margin="162,55,10,10" UndoLimit="10" BorderThickness="2" BorderBrush="#FF9B9B9B" />
+                    <TextBox x:Name="txtContent" Margin="162,114,10,10" UndoLimit="10" BorderThickness="2" BorderBrush="#FF9B9B9B" AllowDrop="False" />
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="162,55,10,0">
+                        <Label Content="YourName:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBox x:Name="txtYourName" Width="90" Margin="5,0,5,0" />
+                        <Label Content="CompanyName:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBox x:Name="txtCompanyName" Width="140" Margin="5,0,5,0" />
+                    </StackPanel>
+                    <CheckBox x:Name="cbIsInsertToTop" Content="插入到文档开始位置" Width="100" Margin="162,92,0,0" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top"/>
                 </Grid>
 
+            </TabItem>
+            <TabItem Header="其它" Visibility="Hidden">
+                <Grid>
+
+                </Grid>
             </TabItem>
         </TabControl>
 

@@ -10,6 +10,8 @@ using System.Globalization;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using EnvDTE;
+using System.IO;
+using CopyrightHelper.Core;
 
 namespace CopyrightHelper
 {
@@ -96,22 +98,22 @@ namespace CopyrightHelper
         {
             var dte = this.ServiceProvider.GetService(typeof(DTE)) as DTE;//获取服务，这玩意儿……可以理解为vs的服务对象吧。
             var selection = dte.ActiveDocument.Selection as TextSelection;
+            if (selection == null) return;
+            //获取拓展名
+            var ext = Path.GetExtension(dte.ActiveDocument.FullName);
 
-            if (!string.IsNullOrEmpty(selection.Text))
+            if (!selection.IsEmpty)
                 selection.Delete();
-            selection.Insert("//Demo test~~~" + Environment.NewLine + "//Test line 2");
 
-            //string message = string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.GetType().FullName);
-            //string title = "DemoCommand";
-
-            // Show a message box to prove we were here
-            //VsShellUtilities.ShowMessageBox(
-            //    this.ServiceProvider,
-            //    message,
-            //    title,
-            //    OLEMSGICON.OLEMSGICON_INFO,
-            //    OLEMSGBUTTON.OLEMSGBUTTON_OK,
-            //    OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
+            var txt = CopyrightCore.GetContentByExtension(ext);
+            if (txt == null) return;
+            //Insert to top
+            if(CopyrightCore.CurrentStoreConfig.IsInsertToTop)
+                selection.StartOfDocument();
+            selection.Insert(txt);
+            
+            //selection.Insert("//Demo test~~~" + Environment.NewLine + "//Test line 2");
+            
         }
     }
 }

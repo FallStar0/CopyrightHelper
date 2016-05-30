@@ -37,22 +37,75 @@ namespace CopyrightHelper.Core
         /// <summary>
         /// Load from file
         /// </summary>
-        public void Load()
+        public static void Load()
         {
             try
             {
-                CurrentToolConfig = StoreHelper.Load();
-                CurrentStoreConfig = StoreHelper.ConvertFromToolConfig(CurrentToolConfig);
+                CurrentStoreConfig = StoreHelper.Load();
+                //CurrentToolConfig = StoreHelper.ConvertToToolConfig(CurrentStoreConfig);
             }
             catch (Exception ex)
             {
                 Trace.Fail(ex.Message + ex.StackTrace);
             }
         }
+        /// <summary>
+        /// Save to file
+        /// </summary>
+        public static void Save()
+        {
+            try
+            {
+                if (CurrentStoreConfig == null)
+                    Load();
+                CurrentStoreConfig.SaveTime = DateTime.Now;
+
+                StoreHelper.Save(CurrentStoreConfig);
+                //CurrentToolConfig = StoreHelper.ConvertToToolConfig(CurrentStoreConfig);
+            }
+            catch (Exception ex)
+            {
+                Debug.Fail(ex.Message, ex.StackTrace);
+            }
+        }
         #endregion
 
-        #region MyRegion
+        #region Main function
+        /// <summary>
+        /// 通过文件拓展名，进行匹配，返回对应需要生成的语句
+        /// </summary>
+        /// <param name="ext">.cs</param>
+        /// <returns></returns>
+        public static string GetContentByExtension(string ext)
+        {
+            if (string.IsNullOrEmpty(ext)) return null;
+            ext = ext.ToLower();
+            if (CurrentStoreConfig == null)
+            {
+                Load();
+            }
+            var it = CurrentStoreConfig.GetItemByExtension(ext);
+            if (it == null) return null;
 
+            return ConvertToolItem(it);
+        }
+        /// <summary>
+        /// 转换为用于插入的语句
+        /// </summary>
+        /// <param name="toolConfig"></param>
+        /// <returns></returns>
+        private static string ConvertToolItem(StoreItemConfig toolConfig)
+        {
+            var cfg = CurrentStoreConfig;
+            var content = toolConfig.Content;
+            if (string.IsNullOrEmpty(content)) return content;
+            content = content.Replace("@company", cfg.CompanyName);
+            content = content.Replace("@yourname", cfg.YourName);
+            content = content.Replace("@year", DateTime.Now.Year.ToString());
+            content = content.Replace("@time", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
+            return content;
+        }
         #endregion
     }
 }

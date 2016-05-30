@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="CopyrightHelper.Microsoft.204babf4-e4a4-46a8-a2d9-1da7fd96b003" Version="1.0" Language="en-US" Publisher="Microsoft" />
+    <Identity Id="CopyrightHelper.Fallstar.204babf4-e4a4-46a8-a2d9-1da7fd96b003" Version="1.0" Language="zh-CN" Publisher="Fallstar" />
     <DisplayName>CopyrightHelper</DisplayName>
-    <Description>Empty VSIX Project.</Description>
+    <Description xml:space="preserve">用于帮助在代码文件插入预定义好的作者信息。</Description>
+    <PreviewImage>Resources\20160530151612.png</PreviewImage>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />

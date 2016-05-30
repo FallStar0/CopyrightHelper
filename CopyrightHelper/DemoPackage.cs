@@ -40,7 +40,7 @@ namespace CopyrightHelper
     [Guid(DemoPackage.PackageGuidString)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    [ProvideToolWindow(typeof(ConfigToolWindow), Style = VsDockStyle.MDI)]
+    [ProvideToolWindow(typeof(ConfigToolWindow), Style = VsDockStyle.MDI, MultiInstances = false)]
     public sealed class DemoPackage : Package
     {
         /// <summary>

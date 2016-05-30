@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyrightHelper", "CopyrightHelper\CopyrightHelper.csproj", "{F9839C91-1605-49C5-9D7A-8AEF98186CEE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{E0BAC88B-649B-4A17-9B10-2C9A3C49AA8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F9839C91-1605-49C5-9D7A-8AEF98186CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9839C91-1605-49C5-9D7A-8AEF98186CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9839C91-1605-49C5-9D7A-8AEF98186CEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0BAC88B-649B-4A17-9B10-2C9A3C49AA8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0BAC88B-649B-4A17-9B10-2C9A3C49AA8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0BAC88B-649B-4A17-9B10-2C9A3C49AA8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0BAC88B-649B-4A17-9B10-2C9A3C49AA8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
