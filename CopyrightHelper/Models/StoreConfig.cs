@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Schema;
 using System.Xml.Serialization;
 
 namespace CopyrightHelper.Models
@@ -120,7 +122,23 @@ namespace CopyrightHelper.Models
         /// <summary>
         /// 编辑框里面的内容
         /// </summary>
+        [XmlIgnore]
         public string Content { get; set; }
+
+        /// <summary>
+        /// 用于序列化的马甲
+        /// </summary>
+        [XmlElement("Content")]
+        public XmlNode ContentCData
+        {
+            get
+            {
+                XmlNode node = new XmlDocument().CreateNode(XmlNodeType.CDATA, "", "");
+                node.InnerText = Content;
+                return node;
+            }
+            set { Content = value.Value; }
+        }
 
         /// <summary>
         /// 是否匹配
