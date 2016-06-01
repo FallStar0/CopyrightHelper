@@ -22,10 +22,6 @@ namespace CopyrightHelper.Core
     {
         #region Fileds
         /// <summary>
-        /// The current config of the function
-        /// </summary>
-        internal static ToolConfig CurrentToolConfig { get; set; }
-        /// <summary>
         /// The current store config
         /// </summary>
         internal static StoreConfig CurrentStoreConfig { get; set; }

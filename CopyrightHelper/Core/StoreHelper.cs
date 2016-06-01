@@ -41,51 +41,6 @@ namespace CopyrightHelper.Core
             return store;
         }
 
-
-        /// <summary>
-        /// 将配置转行为ToolConfig
-        /// </summary>
-        /// <param name="store"></param>
-        /// <returns></returns>
-        public static ToolConfig ConvertToToolConfig(StoreConfig store)
-        {
-            var cfg = new ToolConfig()
-            {
-                CompanyName = store.CompanyName,
-                YourName = store.YourName,
-                Configs = new List<ToolItemConfig>(),
-                IsInsertToTop = store.IsInsertToTop,
-            };
-
-            foreach (var item in store.Configs)
-            {
-                if (string.IsNullOrEmpty(item.Key)) continue;
-                var it = new ToolItemConfig()
-                {
-                    Content = item.Content,
-                };
-                var listKey = new List<string>();
-                var key = item.Key.Trim().ToLower();
-                if (item.Key.Contains(","))
-                {
-                    var keys = key.Split(',');
-                    foreach (var k in keys)
-                    {
-                        var kt = k.Trim();
-                        listKey.Add(kt.Substring(kt.LastIndexOf('.')));
-                    }
-                }
-                else
-                {
-                    listKey.Add(key.Substring(key.LastIndexOf('.')));
-                }
-                it.Keys = listKey.ToArray();
-                cfg.Configs.Add(it);
-            }
-
-            return cfg;
-        }
-
         /// <summary>
         /// 生成默认配置
         /// </summary>
@@ -122,41 +77,5 @@ namespace CopyrightHelper.Core
             SerializeHelper.ToXmlFile(cfg, Constants.ConfigFilePath);
         }
 
-        /// <summary>
-        /// 将ToolConfig转换为StoreConfig
-        /// </summary>
-        /// <param name="cfg"></param>
-        /// <returns></returns>
-        public static StoreConfig ConvertFromToolConfig(ToolConfig cfg)
-        {
-            var store = new StoreConfig()
-            {
-                CompanyName = cfg.CompanyName,
-                YourName = cfg.YourName,
-                SaveTime = DateTime.Now,
-                Configs = new List<StoreItemConfig>(),
-                IsInsertToTop = cfg.IsInsertToTop,
-            };
-            if (cfg.Configs == null || cfg.Configs.Count == 0)
-                return store;
-            var order = cfg.Configs.Count;
-            foreach (var item in cfg.Configs)
-            {
-                var it = new StoreItemConfig()
-                {
-                    Content = item.Content,
-                };
-                store.Configs.Add(it);
-                var key = string.Empty;
-                foreach (var k in item.Keys)
-                {
-                    key += "*" + k + ",";
-                }
-                it.Key = key.TrimEnd(',');
-                order--;
-            }
-
-            return store;
-        }
     }
 }

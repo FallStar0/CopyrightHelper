@@ -65,7 +65,6 @@
     <Compile Include="DemoCommand.cs" />
     <Compile Include="DemoPackage.cs" />
     <Compile Include="Models\StoreConfig.cs" />
-    <Compile Include="Models\ToolConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
