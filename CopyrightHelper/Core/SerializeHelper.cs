@@ -39,11 +39,18 @@ namespace CopyrightHelper.Core
             if (File.Exists(filePath))
                 File.Delete(filePath);
 
-            using (var fs = File.Open(filePath, FileMode.OpenOrCreate, FileAccess.Write))
+            using (var ms = new MemoryStream())
             {
                 var ser = new XmlSerializer(typeof(T), string.Empty);
-                ser.Serialize(fs, obj);
+                ser.Serialize(ms, obj);
+                File.WriteAllText(filePath, Encoding.UTF8.GetString(ms.ToArray()), Encoding.UTF8);
             }
+
+            //using (var fs = File.Open(filePath, FileMode.OpenOrCreate, FileAccess.Write))
+            //{
+            //    var ser = new XmlSerializer(typeof(T), string.Empty);
+            //    ser.Serialize(fs, obj);
+            //}
         }
 
         /// <summary>

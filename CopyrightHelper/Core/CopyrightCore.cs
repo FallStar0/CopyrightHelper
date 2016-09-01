@@ -99,6 +99,11 @@ namespace CopyrightHelper.Core
             content = content.Replace("@yourname", cfg.YourName);
             content = content.Replace("@year", DateTime.Now.Year.ToString());
             content = content.Replace("@time", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            //修正换行不对问题
+            if (content.Contains("\r\n"))
+                content.Replace("\r\n", Environment.NewLine);
+            else if (content.Contains("\n"))
+                content.Replace("\n", Environment.NewLine);
 
             return content;
         }

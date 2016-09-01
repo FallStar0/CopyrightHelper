@@ -52,14 +52,14 @@
               <CommandFlag>DefaultInvisible</CommandFlag>
               <CommandFlag>DynamicVisibility</CommandFlag>
           If you do not want an image next to your command, remove the Icon node /> -->
-      <Button guid="guidDemoPackageCmdSet" id="DemoCommandId" priority="0x0100" type="Button">
+      <Button guid="guidDemoPackageCmdSet" id="DemoCommandId" priority="0x0101" type="Button">
         <Parent guid="guidDemoPackageCmdSet" id="MyMenuGroup" />
         <!--<Icon guid="guidImages" id="bmpPic1" />-->
         <Strings>
           <ButtonText>运行 CopyrightHelper 命令</ButtonText>
         </Strings>
       </Button>
-      <Button guid="guidDemoPackageCmdSet" id="cmdidConfigToolWindowCommand" priority="0x0100" type="Button">
+      <Button guid="guidDemoPackageCmdSet" id="cmdidConfigToolWindowCommand" priority="0x0102" type="Button">
         <Parent guid="guidDemoPackageCmdSet" id="MyMenuGroup" />
         <!--<Icon guid="guidImages2" id="bmpPic1" />-->
         <Strings>
@@ -80,6 +80,11 @@
     </Bitmaps>
   </Commands>
 
+  <KeyBindings>
+    <!-- 设置快捷键 alt+Q. -->
+    <KeyBinding guid="guidDemoPackageCmdSet" id="DemoCommandId" editor="guidVSStd97" key1="Q" mod1="ALT" />
+  </KeyBindings>
+  
   <Symbols>
     <!-- This is the package guid. -->
     <GuidSymbol name="guidDemoPackage" value="{54c46b73-bcff-4dc8-b55b-e6b09e3dfcaa}" />

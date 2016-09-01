@@ -96,12 +96,14 @@ namespace CopyrightHelper
         /// <param name="e">Event args.</param>
         private void MenuItemCallback(object sender, EventArgs e)
         {
-            var dte = this.ServiceProvider.GetService(typeof(DTE)) as DTE;//获取服务，这玩意儿……可以理解为vs的服务对象吧。
+            //获取服务，这玩意儿……可以理解为vs的服务对象吧。
+            var dte = this.ServiceProvider.GetService(typeof(DTE)) as DTE;
             var selection = dte.ActiveDocument.Selection as TextSelection;
             if (selection == null) return;
             //获取拓展名
             var ext = Path.GetExtension(dte.ActiveDocument.FullName);
 
+            //删除所选内容
             if (!selection.IsEmpty)
                 selection.Delete();
 

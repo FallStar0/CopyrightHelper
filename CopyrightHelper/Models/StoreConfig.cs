@@ -137,7 +137,11 @@ namespace CopyrightHelper.Models
                 node.InnerText = Content;
                 return node;
             }
-            set { Content = value.Value; }
+            set
+            {
+                if (value != null)
+                    Content = value.Value;
+            }
         }
 
         /// <summary>
