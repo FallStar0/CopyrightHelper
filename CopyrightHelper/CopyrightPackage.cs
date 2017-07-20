@@ -37,11 +37,11 @@ namespace CopyrightHelper
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true)]
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)] // Info on this package for Help/About
-    [Guid(DemoPackage.PackageGuidString)]
+    [Guid(CopyrightPackage.PackageGuidString)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    [ProvideToolWindow(typeof(ConfigToolWindow), Style = VsDockStyle.MDI, MultiInstances = false)]
-    public sealed class DemoPackage : Package
+    [ProvideToolWindow(typeof(ConfigToolWindow), Style = Microsoft.VisualStudio.Shell.VsDockStyle.MDI, MultiInstances = false)]
+    public sealed class CopyrightPackage : Package
     {
         /// <summary>
         /// DemoPackage GUID string.
@@ -49,9 +49,9 @@ namespace CopyrightHelper
         public const string PackageGuidString = "54c46b73-bcff-4dc8-b55b-e6b09e3dfcaa";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DemoPackage"/> class.
+        /// Initializes a new instance of the <see cref="CopyrightPackage"/> class.
         /// </summary>
-        public DemoPackage()
+        public CopyrightPackage()
         {
             // Inside this method you can place any initialization code that does not require
             // any Visual Studio service because at this point the package object is created but
@@ -68,7 +68,7 @@ namespace CopyrightHelper
         protected override void Initialize()
         {
             base.Initialize();
-            DemoCommand.Initialize(this);
+            CopyrightCommand.Initialize(this);
             ConfigToolWindowCommand.Initialize(this);
         }
 

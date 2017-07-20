@@ -2,16 +2,11 @@
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.VSSDK.BuildTools.14.2.25123\build\Microsoft.VSSDK.BuildTools.props" Condition="Exists('..\packages\Microsoft.VSSDK.BuildTools.14.2.25123\build\Microsoft.VSSDK.BuildTools.props')" />
   <PropertyGroup>
-    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <UseCodebase>true</UseCodebase>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>14.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -67,8 +62,8 @@
     <Compile Include="Core\CopyrightCore.cs" />
     <Compile Include="Core\SerializeHelper.cs" />
     <Compile Include="Core\StoreHelper.cs" />
-    <Compile Include="CopyrightCommand.cs" />
-    <Compile Include="CopyrightPackage.cs" />
+    <Compile Include="DemoCommand.cs" />
+    <Compile Include="DemoPackage.cs" />
     <Compile Include="Models\StoreConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,20 +75,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <VSCTCompile Include="CopyrightPackage.vsct">
+    <VSCTCompile Include="DemoPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
       <SubType>Designer</SubType>
     </VSCTCompile>
-    <Content Include="LICENSE.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <Content Include="Resources\20160530151612.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="index.html" />
-    <Content Include="Resources\CopyrightPackage.ico" />
+    <Content Include="Resources\DemoCommand.png" />
+    <Content Include="Resources\DemoPackage.ico" />
+    <Content Include="Resources\light.png" />
     <Content Include="stylesheet.css" />
   </ItemGroup>
   <ItemGroup>

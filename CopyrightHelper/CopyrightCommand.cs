@@ -18,7 +18,7 @@ namespace CopyrightHelper
     /// <summary>
     /// Command handler
     /// </summary>
-    internal sealed class DemoCommand
+    internal sealed class CopyrightCommand
     {
         /// <summary>
         /// Command ID.
@@ -36,11 +36,11 @@ namespace CopyrightHelper
         private readonly Package package;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DemoCommand"/> class.
+        /// Initializes a new instance of the <see cref="CopyrightCommand"/> class.
         /// Adds our command handlers for menu (commands must exist in the command table file)
         /// </summary>
         /// <param name="package">Owner package, not null.</param>
-        private DemoCommand(Package package)
+        private CopyrightCommand(Package package)
         {
             if (package == null)
             {
@@ -61,7 +61,7 @@ namespace CopyrightHelper
         /// <summary>
         /// Gets the instance of the command.
         /// </summary>
-        public static DemoCommand Instance
+        public static CopyrightCommand Instance
         {
             get;
             private set;
@@ -84,7 +84,7 @@ namespace CopyrightHelper
         /// <param name="package">Owner package, not null.</param>
         public static void Initialize(Package package)
         {
-            Instance = new DemoCommand(package);
+            Instance = new CopyrightCommand(package);
         }
 
         /// <summary>

@@ -1,20 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="CopyrightHelper.Fallstar.204babf4-e4a4-46a8-a2d9-1da7fd96b003" Version="1.0" Language="zh-CN" Publisher="Fallstar" />
+    <Identity Id="CopyrightHelper.Fallstar.204babf4-e4a4-46a8-a2d9-1da7fd96b003" Version="1.1" Language="zh-Hans" Publisher="Fallstar" />
     <DisplayName>CopyrightHelper</DisplayName>
-    <Description xml:space="preserve">用于帮助在代码文件插入预定义好的作者信息。</Description>
+    <Description xml:space="preserve">用于帮助在代码文件插入预定义好的作者信息，快捷键Alt+Q。
+Help coders to insert copyright header to code files. Shortcut Alt+Q.</Description>
+    <MoreInfo>http://git.oschina.net/fallstar/CopyrightHelper</MoreInfo>
+    <License>LICENSE.txt</License>
+    <Icon>Resources\CopyrightPackage.ico</Icon>
     <PreviewImage>Resources\20160530151612.png</PreviewImage>
   </Metadata>
   <Installation>
-    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
+    <InstallationTarget Version="[14.0,16.0)" Id="Microsoft.VisualStudio.Community" />
   </Installation>
   <Dependencies>
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
-    <Dependency Id="Microsoft.VisualStudio.MPF.14.0" DisplayName="Visual Studio MPF 14.0" d:Source="Installed" Version="[14.0]" />
   </Dependencies>
   <Assets>
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
     <Asset Type="Microsoft.VisualStudio.ToolboxControl" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
   </Assets>
+  <Prerequisites>
+  </Prerequisites>
 </PackageManifest>
