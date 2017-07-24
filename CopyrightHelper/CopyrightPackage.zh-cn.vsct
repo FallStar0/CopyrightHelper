@@ -56,13 +56,13 @@
         <Parent guid="guidDemoPackageCmdSet" id="MyMenuGroup" />
         <!--<Icon guid="guidImages" id="bmpPic1" />-->
         <Strings>
-          <ButtonText>Run CopyrightHelper</ButtonText>
+          <ButtonText>运行 CopyrightHelper</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidDemoPackageCmdSet" id="cmdidConfigToolWindowCommand" priority="0x0102" type="Button">
         <Parent guid="guidDemoPackageCmdSet" id="MyMenuGroup" />
         <Strings>
-          <ButtonText>Config CopyrightHelper</ButtonText>
+          <ButtonText>配置 CopyrightHelper</ButtonText>
         </Strings>
       </Button>
     </Buttons>

@@ -118,27 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Res_About" xml:space="preserve">
-    <value>About</value>
+    <value>关于</value>
   </data>
   <data name="Res_Clear" xml:space="preserve">
-    <value>Clear</value>
+    <value>清空</value>
   </data>
   <data name="Res_Config" xml:space="preserve">
-    <value>Config</value>
+    <value>配置</value>
   </data>
   <data name="Res_IsInsertToTop" xml:space="preserve">
-    <value>Is insert to the top of file</value>
+    <value>是否在文件头插入内容</value>
   </data>
   <data name="Res_Link" xml:space="preserve">
     <value>http://git.oschina.net/fallstar/CopyrightHelper</value>
   </data>
   <data name="Res_Option" xml:space="preserve">
-    <value>Option</value>
+    <value>选项</value>
   </data>
   <data name="Res_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>保存</value>
   </data>
   <data name="Res_Title" xml:space="preserve">
-    <value>Copyright Helper</value>
+    <value>Copyright助手</value>
   </data>
 </root>

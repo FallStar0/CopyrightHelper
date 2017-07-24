@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VsixLanguagePack Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema-lp/2010">
+  <LocalizedName>CopyrightHelper</LocalizedName>
+  <LocalizedDescription>用于帮助在代码文件插入预定义好的作者信息，快捷键Alt+Q。</LocalizedDescription>
+</VsixLanguagePack>

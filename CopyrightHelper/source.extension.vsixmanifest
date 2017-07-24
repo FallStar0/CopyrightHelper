@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="CopyrightHelper.Fallstar.204babf4-e4a4-46a8-a2d9-1da7fd96b003" Version="1.1" Language="zh-Hans" Publisher="Fallstar" />
+    <Identity Id="CopyrightHelper.Fallstar.204babf4-e4a4-46a8-a2d9-1da7fd96b003" Version="1.2" Language="en-US" Publisher="Fallstar" />
     <DisplayName>CopyrightHelper</DisplayName>
-    <Description xml:space="preserve">用于帮助在代码文件插入预定义好的作者信息，快捷键Alt+Q。
-Help coders to insert copyright header to code files. Shortcut Alt+Q.</Description>
-    <MoreInfo>http://git.oschina.net/fallstar/CopyrightHelper</MoreInfo>
+    <Description xml:space="preserve">Help coders to insert copyright header to code files. Shortcut Alt+Q.</Description>
+    <MoreInfo>https://github.com/FallStar0/CopyrightHelper</MoreInfo>
     <License>LICENSE.txt</License>
-    <Icon>Resources\CopyrightPackage.ico</Icon>
-    <PreviewImage>Resources\20160530151612.png</PreviewImage>
+    <Icon>Resources\CopyrightPackage.png</Icon>
+    <PreviewImage>Resources\shot1.png</PreviewImage>
   </Metadata>
   <Installation>
     <InstallationTarget Version="[14.0,16.0)" Id="Microsoft.VisualStudio.Community" />

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:loc="clr-namespace:CopyrightHelper"
              Background="{DynamicResource VsBrush.Window}"
              Foreground="{DynamicResource VsBrush.WindowText}"
              mc:Ignorable="d"
@@ -16,18 +17,19 @@
     </UserControl.CommandBindings>
     <Grid>
         <TabControl >
-            <TabItem Header="配置">
+            <TabItem Header="{x:Static loc:VSPackage.Res_Config}">
                 <Grid>
                     <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="348" >
-                        <TextBox x:Name="txtInput" Margin="10,10,10,10" Width="100" BorderBrush="Black" Text="*.*" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"  />
-                        <Button Content="增加" Width="50" Margin="0,8,0,8" Command="{DynamicResource Cmd}" CommandParameter="Add"/>
-                        <Button Content="删除" Width="50" Margin="8,8,0,8" Command="{DynamicResource Cmd}" CommandParameter="Del"/>
-                        <Button Content="向上" Width="45" Margin="8,8,8,8" Command="{DynamicResource Cmd}" CommandParameter="MoveUp"/>
-                        <Button Content="向下" Width="45" Margin="0,8,0,8" Command="{DynamicResource Cmd}" CommandParameter="MoveDown"/>
+                        <TextBox x:Name="txtInput" Margin="10,10,10,10" Width="100" BorderBrush="Black" Text="*.*" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        <Button Content="+" Width="50" Margin="0,8,0,8" Command="{DynamicResource Cmd}" CommandParameter="Add" FontSize="16" FontWeight="Bold"/>
+                        <Button Content="-" Width="50" Margin="8,8,0,8" Command="{DynamicResource Cmd}" CommandParameter="Del" FontSize="16" FontWeight="Bold"/>
+                        <Button Content="↑" Width="50" Margin="8,8,8,8" Command="{DynamicResource Cmd}" CommandParameter="MoveUp" FontSize="16" FontWeight="Bold"/>
+                        <Button Content="↓" Width="50" Margin="0,8,0,8" Command="{DynamicResource Cmd}" CommandParameter="MoveDown" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" Margin="380,0,0,0" HorizontalAlignment="Left" Width="164" >
-                        <Button Content="保存" Width="60" Margin="0,5,0,5" Command="{DynamicResource Cmd}" CommandParameter="Save"/>
-                        <Button Content="清空" Width="60" Margin="10,5,0,5" Command="{DynamicResource Cmd}" CommandParameter="Clear"/>
+                    <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" Margin="380,0,0,0" HorizontalAlignment="Left" Width="200" >
+                        <Button Content="{x:Static loc:VSPackage.Res_Save}" Width="50" Margin="0,5,0,5" Command="{DynamicResource Cmd}" CommandParameter="Save"/>
+                        <Button Content="{x:Static loc:VSPackage.Res_Clear}" Width="50" Margin="10,5,0,5" Command="{DynamicResource Cmd}" CommandParameter="Clear"/>
+                        <Label Cursor="Hand" Content="{x:Static loc:VSPackage.Res_About}" Margin="10,5,0,5" HorizontalAlignment="Center" Hyperlink.Click="Label_Click" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF002EFF"  />
                     </StackPanel>
 
                     <ListBox x:Name="lbType" Margin="0,55,0,10"  HorizontalAlignment="Left" Width="150" BorderBrush="#FF7D899E" />
@@ -38,14 +40,9 @@
                         <Label Content="CompanyName:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                         <TextBox x:Name="txtCompanyName" Width="140" Margin="5,0,5,0" />
                     </StackPanel>
-                    <CheckBox x:Name="cbIsInsertToTop" Content="插入到文档开始位置" Width="100" Margin="162,92,0,0" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="cbIsInsertToTop" Width="100" Margin="162,92,0,0" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Content="{x:Static loc:VSPackage.Res_IsInsertToTop}"/>
                 </Grid>
 
-            </TabItem>
-            <TabItem Header="其它" Visibility="Hidden">
-                <Grid>
-
-                </Grid>
             </TabItem>
         </TabControl>
 

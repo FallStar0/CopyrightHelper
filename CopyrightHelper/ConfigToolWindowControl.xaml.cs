@@ -31,6 +31,7 @@ namespace CopyrightHelper
         private void WinLoaded(object sender, RoutedEventArgs e)
         {
             InitControls();
+           
 
             CopyrightCore.Load();
             var cfg = CopyrightCore.CurrentStoreConfig;
@@ -112,6 +113,8 @@ namespace CopyrightHelper
 
                     case "MoveUp": MoveItem(-1); break;
                     case "MoveDown": MoveItem(1); break;
+
+                    case "About": About(); break;
 
                     default: return;
                 }
@@ -200,6 +203,21 @@ namespace CopyrightHelper
             cfg.Configs.Remove(it);
             cfg.Configs.Insert(targetIndex, it);
         }
+
+        /// <summary>
+        /// 关于
+        /// </summary>
+        private void About()
+        {
+            var brow = new WebBrowser();
+            brow.Navigate("http://git.oschina.net/fallstar/CopyrightHelper");
+        }
+        private void Label_Click(object sender, RoutedEventArgs e)
+        {
+            About();
+        }
         #endregion
+
+
     }
 }
