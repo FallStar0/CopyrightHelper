@@ -29,7 +29,7 @@
                     <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" Margin="380,0,0,0" HorizontalAlignment="Left" Width="200" >
                         <Button Content="{x:Static loc:VSPackage.Res_Save}" Width="50" Margin="0,5,0,5" Command="{DynamicResource Cmd}" CommandParameter="Save"/>
                         <Button Content="{x:Static loc:VSPackage.Res_Clear}" Width="50" Margin="10,5,0,5" Command="{DynamicResource Cmd}" CommandParameter="Clear"/>
-                        <Label Cursor="Hand" Content="{x:Static loc:VSPackage.Res_About}" Margin="10,5,0,5" HorizontalAlignment="Center" Hyperlink.Click="Label_Click" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF002EFF"  />
+                        <Label Visibility="Collapsed" Cursor="Hand" Content="{x:Static loc:VSPackage.Res_About}" Margin="10,5,0,5" HorizontalAlignment="Center" Hyperlink.Click="Label_Click" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF002EFF"  />
                     </StackPanel>
 
                     <ListBox x:Name="lbType" Margin="0,55,0,10"  HorizontalAlignment="Left" Width="150" BorderBrush="#FF7D899E" />
