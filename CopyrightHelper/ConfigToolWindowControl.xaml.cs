@@ -12,6 +12,8 @@ namespace CopyrightHelper
     using System.Windows.Controls;
     using System.Linq;
     using Models;
+    using System;
+
     /// <summary>
     /// Interaction logic for ConfigToolWindowControl.
     /// </summary>
@@ -31,7 +33,7 @@ namespace CopyrightHelper
         private void WinLoaded(object sender, RoutedEventArgs e)
         {
             InitControls();
-           
+
 
             CopyrightCore.Load();
             var cfg = CopyrightCore.CurrentStoreConfig;
@@ -39,6 +41,7 @@ namespace CopyrightHelper
             txtCompanyName.Text = cfg.CompanyName;
             txtYourName.Text = cfg.YourName;
             cbIsInsertToTop.IsChecked = cfg.IsInsertToTop;
+            txtTimeFormat.Text = cfg.TimeFormat;
 
             BindTypeList();
 
@@ -179,6 +182,20 @@ namespace CopyrightHelper
             cfg.CompanyName = txtCompanyName.Text.Trim();
             cfg.YourName = txtYourName.Text.Trim();
             cfg.IsInsertToTop = cbIsInsertToTop.IsChecked == true;
+            var tf = txtTimeFormat.Text.Trim();
+            if (!string.IsNullOrEmpty(tf))
+            {
+                try
+                {
+                    var t = DateTime.Now.ToString(tf);
+                }
+                catch
+                {
+                    MessageBox.Show(VSPackage.Err_TimeFormat);
+                    return;
+                }
+            }
+            cfg.TimeFormat = tf;
 
             CopyrightCore.Save();
         }

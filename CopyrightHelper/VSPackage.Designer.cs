@@ -61,6 +61,15 @@ namespace CopyrightHelper {
         }
         
         /// <summary>
+        ///   查找类似 Time Format is incorrect. 的本地化字符串。
+        /// </summary>
+        public static string Err_TimeFormat {
+            get {
+                return ResourceManager.GetString("Err_TimeFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 About 的本地化字符串。
         /// </summary>
         public static string Res_About {

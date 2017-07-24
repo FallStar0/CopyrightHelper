@@ -95,10 +95,13 @@ namespace CopyrightHelper.Core
             var cfg = CurrentStoreConfig;
             var content = toolConfig.Content;
             if (string.IsNullOrEmpty(content)) return content;
+            var tf = cfg.TimeFormat;
+            if (tf == null || string.IsNullOrEmpty(tf))
+                tf = "yyyy-MM-dd HH:mm:ss";
             content = content.Replace("@company", cfg.CompanyName);
             content = content.Replace("@yourname", cfg.YourName);
             content = content.Replace("@year", DateTime.Now.Year.ToString());
-            content = content.Replace("@time", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            content = content.Replace("@time", DateTime.Now.ToString(tf));
             //修正换行不对问题
             if (content.Contains("\r\n"))
                 content.Replace("\r\n", Environment.NewLine);

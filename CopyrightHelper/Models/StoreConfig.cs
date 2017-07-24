@@ -36,6 +36,11 @@ namespace CopyrightHelper.Models
         public string CompanyName { get; set; }
 
         /// <summary>
+        /// 时间格式
+        /// </summary>
+        public string TimeFormat { get; set; } = "yyyy-MM-dd HH:mm:ss";
+
+        /// <summary>
         /// 是否将结果插入到文件头
         /// </summary>
         public bool IsInsertToTop { get; set; }
