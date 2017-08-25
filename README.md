@@ -1,6 +1,7 @@
 # CopyrightHelper
 A visual studio plugin which use for developers who need to quick insert copyright info to code file.
 Current support : VS2015,VS2017.
+VS2012 and VS2013 should be Ok (not tested).
 
 
 ## Origin

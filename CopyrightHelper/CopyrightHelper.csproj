@@ -90,6 +90,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CopyrightPackage.zh-Hans.vsct" />
     <Content Include="Resources\CopyrightPackage.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -103,9 +104,6 @@
     </Content>
     <VSCTCompile Include="CopyrightPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
-      <SubType>Designer</SubType>
-    </VSCTCompile>
-    <VSCTCompile Include="CopyrightPackage.zh-Hans.vsct">
       <SubType>Designer</SubType>
     </VSCTCompile>
     <Content Include="LICENSE.txt">

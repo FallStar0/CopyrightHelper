@@ -34,6 +34,7 @@ namespace CopyrightHelper
         {
             InitControls();
 
+            lblVersion.Text = Constants.FileVersion;
 
             CopyrightCore.Load();
             var cfg = CopyrightCore.CurrentStoreConfig;
@@ -226,12 +227,10 @@ namespace CopyrightHelper
         /// </summary>
         private void About()
         {
-            var brow = new WebBrowser();
-            brow.Navigate("http://git.oschina.net/fallstar/CopyrightHelper");
-        }
-        private void Label_Click(object sender, RoutedEventArgs e)
-        {
-            About();
+            //var brow = new WebBrowser();
+            //brow.Navigate("http://git.oschina.net/fallstar/CopyrightHelper");
+
+            MessageBox.Show($"CopyrightHelper v{Constants.FileVersion} by Fallstar" + Environment.NewLine + "Home : http://git.oschina.net/fallstar/CopyrightHelper");
         }
         #endregion
 

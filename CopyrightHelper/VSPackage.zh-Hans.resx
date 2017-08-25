@@ -133,13 +133,16 @@
     <value>是否在文件头插入内容</value>
   </data>
   <data name="Res_Link" xml:space="preserve">
-    <value>http://git.oschina.net/fallstar/CopyrightHelper</value>
+    <value>https://git.oschina.net/fallstar/CopyrightHelper</value>
   </data>
   <data name="Res_Option" xml:space="preserve">
     <value>选项</value>
   </data>
   <data name="Res_Save" xml:space="preserve">
     <value>保存</value>
+  </data>
+  <data name="Res_TimeFormat" xml:space="preserve">
+    <value>时间格式：</value>
   </data>
   <data name="Res_Title" xml:space="preserve">
     <value>Copyright助手</value>

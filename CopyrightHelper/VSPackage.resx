@@ -133,13 +133,16 @@
     <value>Is insert to the top of file</value>
   </data>
   <data name="Res_Link" xml:space="preserve">
-    <value>http://git.oschina.net/fallstar/CopyrightHelper</value>
+    <value>https://git.oschina.net/fallstar/CopyrightHelper</value>
   </data>
   <data name="Res_Option" xml:space="preserve">
     <value>Option</value>
   </data>
   <data name="Res_Save" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="Res_TimeFormat" xml:space="preserve">
+    <value>Time Format :</value>
   </data>
   <data name="Res_Title" xml:space="preserve">
     <value>Copyright Helper</value>

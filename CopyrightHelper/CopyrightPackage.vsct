@@ -22,7 +22,7 @@
 
   <!--The Commands section is where commands, menus, and menu groups are defined.
       This section uses a Guid to identify the package that provides the command defined inside it. -->
-  <Commands package="guidDemoPackage">
+  <Commands package="copyrightPackage">
     <!-- Inside this section we have different sub-sections: one for the menus, another
     for the menu groups, one for the buttons (the actual commands), one for the combos
     and the last one for the bitmaps used. Each element is identified by a command id that
@@ -36,7 +36,7 @@
          group as the part of a menu contained between two lines. The parent of a group
          must be a menu. -->
     <Groups>
-      <Group guid="guidDemoPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Group guid="copyrightPackageCmdSet" id="MyMenuGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
       </Group>
     </Groups>
@@ -52,15 +52,14 @@
               <CommandFlag>DefaultInvisible</CommandFlag>
               <CommandFlag>DynamicVisibility</CommandFlag>
           If you do not want an image next to your command, remove the Icon node /> -->
-      <Button guid="guidDemoPackageCmdSet" id="DemoCommandId" priority="0x0101" type="Button">
-        <Parent guid="guidDemoPackageCmdSet" id="MyMenuGroup" />
-        <!--<Icon guid="guidImages" id="bmpPic1" />-->
+      <Button guid="copyrightPackageCmdSet" id="DemoCommandId" priority="0x0101" type="Button">
+        <Parent guid="copyrightPackageCmdSet" id="MyMenuGroup" />
         <Strings>
           <ButtonText>Run CopyrightHelper</ButtonText>
         </Strings>
       </Button>
-      <Button guid="guidDemoPackageCmdSet" id="cmdidConfigToolWindowCommand" priority="0x0102" type="Button">
-        <Parent guid="guidDemoPackageCmdSet" id="MyMenuGroup" />
+      <Button guid="copyrightPackageCmdSet" id="cmdidConfigToolWindowCommand" priority="0x0102" type="Button">
+        <Parent guid="copyrightPackageCmdSet" id="MyMenuGroup" />
         <Strings>
           <ButtonText>Config CopyrightHelper</ButtonText>
         </Strings>
@@ -80,28 +79,18 @@
 
   <KeyBindings>
     <!-- 设置快捷键 alt+Q. -->
-    <KeyBinding guid="guidDemoPackageCmdSet" id="DemoCommandId" editor="guidVSStd97" key1="Q" mod1="ALT" />
+    <KeyBinding guid="copyrightPackageCmdSet" id="DemoCommandId" editor="guidVSStd97" key1="Q" mod1="ALT" />
   </KeyBindings>
   
   <Symbols>
     <!-- This is the package guid. -->
-    <GuidSymbol name="guidDemoPackage" value="{54c46b73-bcff-4dc8-b55b-e6b09e3dfcaa}" />
+    <GuidSymbol name="copyrightPackage" value="{54c46b73-bcff-4dc8-b55b-e6b09e3dfcaa}" />
 
     <!-- This is the guid used to group the menu commands together -->
-    <GuidSymbol name="guidDemoPackageCmdSet" value="{35664e0f-2d41-46aa-aa0a-42d160dfc50b}">
+    <GuidSymbol name="copyrightPackageCmdSet" value="{35664e0f-2d41-46aa-aa0a-42d160dfc50b}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="DemoCommandId" value="0x0100" />
       <IDSymbol value="4129" name="cmdidConfigToolWindowCommand" />
     </GuidSymbol>
-
-    <!--<GuidSymbol name="guidImages" value="{e867ae72-c56e-4a4a-9f0e-590ead92cdfb}">
-      <IDSymbol name="bmpPic1" value="1" />
-      <IDSymbol name="bmpPic2" value="2" />
-      <IDSymbol name="bmpPicSearch" value="3" />
-      <IDSymbol name="bmpPicX" value="4" />
-      <IDSymbol name="bmpPicArrows" value="5" />
-      <IDSymbol name="bmpPicStrikethrough" value="6" />
-    </GuidSymbol>-->
-
   </Symbols>
 </CommandTable>

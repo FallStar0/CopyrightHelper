@@ -11,6 +11,13 @@
              Name="MyToolWindow">
     <UserControl.Resources>
         <RoutedCommand x:Key="Cmd" />
+        <Style TargetType="TabItem">
+            <Setter Property="FontSize" Value="18"></Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
     </UserControl.Resources>
     <UserControl.CommandBindings>
         <CommandBinding  CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_Executed" Command="{StaticResource Cmd}" />
@@ -29,7 +36,7 @@
                     <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" Margin="380,0,0,0" HorizontalAlignment="Left" Width="200" >
                         <Button Content="{x:Static loc:VSPackage.Res_Save}" Width="50" Margin="0,5,0,5" Command="{DynamicResource Cmd}" CommandParameter="Save"/>
                         <Button Content="{x:Static loc:VSPackage.Res_Clear}" Width="50" Margin="10,5,0,5" Command="{DynamicResource Cmd}" CommandParameter="Clear"/>
-                        <Label Visibility="Collapsed" Cursor="Hand" Content="{x:Static loc:VSPackage.Res_About}" Margin="10,5,0,5" HorizontalAlignment="Center" Hyperlink.Click="Label_Click" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF002EFF"  />
+                        <!--<Label Cursor="Hand" Content="{x:Static loc:VSPackage.Res_About}" Margin="10,5,0,5" HorizontalAlignment="Center" Hyperlink.Click="Label_Click" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF002EFF"  />-->
                     </StackPanel>
 
                     <ListBox x:Name="lbType" Margin="0,55,0,10"  HorizontalAlignment="Left" Width="150" BorderBrush="#FF7D899E" />
@@ -40,14 +47,31 @@
                         <Label Content="CompanyName:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                         <TextBox x:Name="txtCompanyName" Width="140" Margin="5,0,5,0" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="162,88,10,0" Height="30" VerticalAlignment="Top">
-                        <CheckBox x:Name="cbIsInsertToTop" Width="100" HorizontalAlignment="Left" Height="17" VerticalAlignment="Center" Content="{x:Static loc:VSPackage.Res_IsInsertToTop}" VerticalContentAlignment="Center" Margin="0,0,10,0"/>
-                        <Label Content="TimeFormat:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        <TextBox x:Name="txtTimeFormat" Width="140" Margin="0,3"  />
+                    <StackPanel Orientation="Horizontal" Margin="162,88,10,0" Height="34" VerticalAlignment="Top">
+                        <CheckBox x:Name="cbIsInsertToTop"   HorizontalAlignment="Left"  VerticalAlignment="Center" Content="{x:Static loc:VSPackage.Res_IsInsertToTop}" VerticalContentAlignment="Center" Margin="0,0,10,0" FontSize="16"/>
+                        <Label Content="{x:Static loc:VSPackage.Res_TimeFormat}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+                        <TextBox x:Name="txtTimeFormat" FontSize="14" Width="180" Margin="0,3" Text="yyyy-MM-dd HH:mm:ss" />
                     </StackPanel>
                 </Grid>
 
             </TabItem>
+            <TabItem Header="{x:Static loc:VSPackage.Res_About}">
+                <Grid>
+                    <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock FontSize="22" Margin="10,0,0,0">CopyrightHelper v</TextBlock>
+                        <TextBlock FontSize="22" x:Name="lblVersion"></TextBlock>
+                        <TextBlock FontSize="22" Margin="10,0,0,0">by Fallstar</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,50,0,0"/>
+                    <Grid Margin="0,50,0,0">
+                        <TextBlock FontSize="20" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"><Run Text="Home :"/></TextBlock>
+                        <TextBox FontSize="20" Foreground="#FF0023FF" IsReadOnly="True" Height="34" Width="477" Text="https://git.oschina.net/fallstar/CopyrightHelper" Margin="40,37,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBox FontSize="20" Foreground="#FF0023FF" IsReadOnly="True" Height="34" Width="477" Margin="40,90,0,0" Text="https://github.com/FallStar0/CopyrightHelper" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+
         </TabControl>
 
     </Grid>
