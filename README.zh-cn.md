@@ -39,4 +39,4 @@
 优先级最低的在最后一项（一般是 *.* ）。
 
 ## License
-MIT
+[Apache License v2.0](/LICENSE "Apache License v2.0")
