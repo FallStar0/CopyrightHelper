@@ -43,4 +43,4 @@ By the way , *.* match all the files.
 The buttom one has the lowest priority(*.* by default).
 
 ## License
-[Apache Licene 2.0](/LICENSE "Apache Licene 2.0")
+MIT
