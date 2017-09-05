@@ -117,8 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Err_TimeFormat" xml:space="preserve">
+    <value>Time Format is incorrect.</value>
+  </data>
+  <data name="Res_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Res_Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Res_Config" xml:space="preserve">
+    <value>Config</value>
+  </data>
+  <data name="Res_IsInsertToTop" xml:space="preserve">
+    <value>Is insert to the top of file</value>
+  </data>
   <data name="Res_Link" xml:space="preserve">
     <value>https://github.com/FallStar0/CopyrightHelper</value>
+  </data>
+  <data name="Res_Option" xml:space="preserve">
+    <value>Option</value>
+  </data>
+  <data name="Res_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Res_TimeFormat" xml:space="preserve">
+    <value>Time Format :</value>
   </data>
   <data name="Res_Title" xml:space="preserve">
     <value>Copyright Helper</value>

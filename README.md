@@ -1,7 +1,6 @@
 # CopyrightHelper
 A visual studio plugin which use for developers who need to quick insert copyright info to code file.
-Current support : VS2015,VS2017.
-VS2012 and VS2013 should be Ok (not tested).
+Current support : VS2013,VS2015,VS2017.
 
 
 ## Origin
@@ -13,7 +12,7 @@ So I create this to resolve the problem, insert different copyright info in diff
 
 
 ## Usage
-![shot](/CopyrightHelper/Resources/shot1.png "shot")
+![shot](/CopyrightHelper/Resources/shot1.en.png "shot")
 
 Open VS menu->Tools-> Config CopyrightHelper
 Add file extension like *.cs , and set the insert content like :

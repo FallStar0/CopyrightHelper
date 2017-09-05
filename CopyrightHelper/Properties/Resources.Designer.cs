@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CopyrightHelper {
+namespace CopyrightHelper.Properties {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace CopyrightHelper {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class VSPackage {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal VSPackage() {
+        internal Resources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace CopyrightHelper {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CopyrightHelper.VSPackage", typeof(VSPackage).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CopyrightHelper.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,11 +61,83 @@ namespace CopyrightHelper {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Time Format is incorrect..
+        /// </summary>
+        public static string Err_TimeFormat {
+            get {
+                return ResourceManager.GetString("Err_TimeFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string Res_About {
+            get {
+                return ResourceManager.GetString("Res_About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear.
+        /// </summary>
+        public static string Res_Clear {
+            get {
+                return ResourceManager.GetString("Res_Clear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Config.
+        /// </summary>
+        public static string Res_Config {
+            get {
+                return ResourceManager.GetString("Res_Config", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is insert to the top of file.
+        /// </summary>
+        public static string Res_IsInsertToTop {
+            get {
+                return ResourceManager.GetString("Res_IsInsertToTop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://github.com/FallStar0/CopyrightHelper.
         /// </summary>
         public static string Res_Link {
             get {
                 return ResourceManager.GetString("Res_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Option.
+        /// </summary>
+        public static string Res_Option {
+            get {
+                return ResourceManager.GetString("Res_Option", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Res_Save {
+            get {
+                return ResourceManager.GetString("Res_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time Format :.
+        /// </summary>
+        public static string Res_TimeFormat {
+            get {
+                return ResourceManager.GetString("Res_TimeFormat", resourceCulture);
             }
         }
         

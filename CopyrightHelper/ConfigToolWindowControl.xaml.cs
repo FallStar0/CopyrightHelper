@@ -192,7 +192,7 @@ namespace CopyrightHelper
                 }
                 catch
                 {
-                    MessageBox.Show(VSPackage.Err_TimeFormat);
+                    MessageBox.Show(Properties.Resources.Err_TimeFormat);
                     return;
                 }
             }
