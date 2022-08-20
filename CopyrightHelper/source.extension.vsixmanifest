@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="CopyrightHelper.Fallstar.204babf4-e4a4-46a8-a2d9-1da7fd96b003" Version="1.3.6.0" Language="en-US" Publisher="Fallstar" />
+        <Identity Id="CopyrightHelper.Fallstar.204babf4-e4a4-46a8-a2d9-1da7fd96b003" Version="1.3.7.0" Language="en-US" Publisher="Fallstar" />
         <DisplayName>CopyrightHelper</DisplayName>
         <Description xml:space="preserve">Help coders to insert copyright header to code files. Shortcut Alt+Q.
 VS2013~VS2019</Description>
@@ -11,16 +11,21 @@ VS2013~VS2019</Description>
         <PreviewImage>Resources\shot1.en.png</PreviewImage>
     </Metadata>
     <Installation>
-        <InstallationTarget Version="[13.0,17.0)" Id="Microsoft.VisualStudio.Community" />
+        <InstallationTarget Version="[13.0,18.0)" Id="Microsoft.VisualStudio.Community">
+            <ProductArchitecture>x86</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[16.0,18.0)" Id="Microsoft.VisualStudio.Community">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
     </Installation>
     <Dependencies>
-        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.7.2,)" />
     </Dependencies>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
         <Asset Type="Microsoft.VisualStudio.ToolboxControl" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
     </Assets>
     <Prerequisites>
-        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[13.0,17.0)" DisplayName="Visual Studio 核心编辑器" />
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[13.0,18.0)" DisplayName="Visual Studio 核心编辑器" />
     </Prerequisites>
 </PackageManifest>

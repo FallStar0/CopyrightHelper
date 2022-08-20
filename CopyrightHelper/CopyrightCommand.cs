@@ -4,14 +4,12 @@
 // </copyright>
 //------------------------------------------------------------------------------
 
+using CopyrightHelper.Core;
+using EnvDTE;
+using Microsoft.VisualStudio.Shell;
 using System;
 using System.ComponentModel.Design;
-using System.Globalization;
-using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Shell.Interop;
-using EnvDTE;
 using System.IO;
-using CopyrightHelper.Core;
 
 namespace CopyrightHelper
 {
@@ -97,6 +95,7 @@ namespace CopyrightHelper
         private void MenuItemCallback(object sender, EventArgs e)
         {
             //获取服务，这玩意儿……可以理解为vs的服务对象吧。
+            ThreadHelper.ThrowIfNotOnUIThread();
             var dte = this.ServiceProvider.GetService(typeof(DTE)) as DTE;
             var selection = dte.ActiveDocument.Selection as TextSelection;
             if (selection == null) return;

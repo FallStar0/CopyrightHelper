@@ -99,7 +99,7 @@ namespace CopyrightHelper
             {
                 throw new NotSupportedException("Cannot create tool window");
             }
-
+            ThreadHelper.ThrowIfNotOnUIThread();
             IVsWindowFrame windowFrame = (IVsWindowFrame)window.Frame;
             Microsoft.VisualStudio.ErrorHandler.ThrowOnFailure(windowFrame.Show());
         }

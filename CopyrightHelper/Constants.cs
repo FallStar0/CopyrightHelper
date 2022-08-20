@@ -21,7 +21,7 @@ namespace CopyrightHelper
         /// <summary>
         /// 文件版本
         /// </summary>
-        public const string FileVersion = "1.3.5.0";
+        public const string FileVersion = "1.3.7.0";
         /// <summary>
         /// 配置文件路径
         /// </summary>

@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <Description>Help to insert copyright info to code file.</Description>
+    <Title>CopyrightHelper</Title>
+    <Company>Fallstar</Company>
+    <Product>CopyrightHelper</Product>
+    <Copyright>Fallstar (fallstar0@qq.com)</Copyright>
+    <Version>1.3.7</Version>
+    <FileVersion>1.3.7</FileVersion>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <AssemblyName>CopyrightHelper1</AssemblyName>
+    <RootNamespace>CopyrightHelper1</RootNamespace>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Shell.15.0" Version="17.3.32804.24" />
+    <PackageReference Include="Microsoft.VisualStudio.Shell.Interop" Version="17.3.32804.24" />
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.3.2093">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Design" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="**\*.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <Compile Update="**\*.xaml.cs" SubType="Code" DependentUpon="%(Filename)" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <UseCodebase>true</UseCodebase>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="source.extension.vsixmanifest">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
